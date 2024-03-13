@@ -5,28 +5,23 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:frs_app/constants.dart';
 import 'package:frs_app/frs_app.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  try {
-    if (kIsWeb) {
-      await Firebase.initializeApp(
-        options: FirebaseOptions(
-          apiKey: apikey,
-          authDomain: databaseURL,
-          projectId: projectId,
-          storageBucket: storageBucket,
-          messagingSenderId: messagingSenderId,
-          appId: appId,
-        ),
-      );
-    } else {
-      await Firebase.initializeApp();
-    }
-  } catch (e) {
-    print("Error initializing Firebase: $e");
-  }
+ 
+ await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+          // apiKey: apikey,
+          // authDomain: databaseURL,
+          // projectId: projectId,
+          // storageBucket: storageBucket,
+          // messagingSenderId: messagingSenderId,
+          // appId: appId,
+);
+  
 
   runApp(MyApp());
 }
