@@ -9,6 +9,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       title: 'Fertilizer Recommendation',
       home: FertilizerPage(),
@@ -81,6 +82,7 @@ class _FertilizerPageState extends State<FertilizerPage> {
     // Update the recommendation state with the predicted class
     setState(() {
       recommendation = predictedClass;
+      print('Recommended Fertilizer: $recommendation');
     });
   }
 
