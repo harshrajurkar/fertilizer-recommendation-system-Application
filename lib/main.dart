@@ -29,7 +29,7 @@ class _FertilizerPageState extends State<FertilizerPage> {
 
   // Variable to store recommended fertilizer
   String recommendation = '';
-  
+
   // TFLite interpreter instance
   late tflite.Interpreter interpreter;
   late List<String> labels;
@@ -51,8 +51,9 @@ class _FertilizerPageState extends State<FertilizerPage> {
 
   loadLabels() async {
     // Load the labels from the label file
-    String labelsContent = await DefaultAssetBundle.of(context).loadString('assets/class_labels.txt');
-    labels = labelsContent.split('\n');
+    String labelsContent = await DefaultAssetBundle.of(context)
+        .loadString('assets/class_labels.txt');
+    labels = labelsContent.split('\n').map((label) => label.trim()).toList();
   }
 
   // Method to perform inference using TFLite model
@@ -67,13 +68,14 @@ class _FertilizerPageState extends State<FertilizerPage> {
     var inputBuffer = Float32List.fromList(input);
 
     // Prepare output buffer
-    var outputBuffer = Float32List(1); // Assuming output tensor has size 1
+    var outputBuffer = Float32List(6); // Assuming output tensor has size 6
 
     // Run inference
     interpreter.run(inputBuffer.buffer, outputBuffer.buffer);
 
     // Get the predicted class index
-    var predictedIndex = outputBuffer[0].round();
+    var predictedIndex = outputBuffer.indexOf(outputBuffer
+        .reduce((value, element) => value > element ? value : element));
 
     // Get the corresponding class name from the labels list
     var predictedClass = labels[predictedIndex];

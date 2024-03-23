@@ -1,24 +1,6 @@
-10-26-26
-10:10:10 NPK
-10:26:26 NPK
-12:32:16 NPK
-13:32:26 NPK
-14-35-14
-17-17-17
-18:46:00 NPK
-19:19:19 NPK
-20-20
-20:20:20 NPK
-28-28
-50:26:26 NPK
-Ammonium Sulphate
-Chilated Micronutrient
-DAP
-Ferrous Sulphate
-Hydrated Lime
-MOP
-Magnesium Sulphate
-SSP
-Sulphur
-Urea
-White Potash
+Fertilizer Name_14-35-14
+Fertilizer Name_17-17-17
+Fertilizer Name_20-20
+Fertilizer Name_28-28
+Fertilizer Name_DAP
+Fertilizer Name_Urea
