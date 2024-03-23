@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   csv: ^6.0.0
   tflite_flutter: ^0.10.4
+  firebase_core: ^2.27.1
 
   
 
