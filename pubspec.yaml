@@ -38,6 +38,9 @@ dependencies:
   csv: ^6.0.0
   tflite_flutter: ^0.10.4
   firebase_core: ^2.27.1
+  firebase_database: ^10.4.10
+  page_transition: ^2.1.0
+  animated_widgets: ^1.1.0
 
   
 
